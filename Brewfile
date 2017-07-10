@@ -16,7 +16,7 @@ brew "aws-shell"
 brew "awscli"
 brew "readline"
 brew "bash"
-brew "binutils"
+brew "binutils", args: ["with-default-names"]
 brew "libpng"
 brew "freetype"
 brew "fontconfig"
@@ -28,10 +28,10 @@ brew "ocamlbuild"
 brew "camlp4"
 brew "cask"
 brew "cmake"
-brew "coreutils"
+brew "coreutils", args: ["with-default-names"]
 brew "cscope"
 brew "ctags"
-brew "diffutils"
+brew "diffutils", args:["with-default-names"]
 brew "perl"
 brew "git"
 brew "docker-machine", restart_service: true
@@ -104,7 +104,7 @@ brew "tmux"
 brew "tree"
 brew "unzip"
 brew "utf8proc"
-brew "vim"
+brew "vim", args:["override-system-vi"]
 brew "watch"
 brew "wdiff", args: ["with-gettext"]
 brew "wget"
