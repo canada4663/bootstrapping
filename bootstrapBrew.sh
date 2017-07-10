@@ -17,13 +17,14 @@ brew bundle --file=$HOME/bootstrapping/Brewfile
 gpip(){
        PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
+sudo xcodebuild -license accept
 gpip install powerline-status
 cd $HOME
 git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 homeshick --batch clone https://github.com/canada4663/dotfiles.git
 homeshick link --force
-sudo chsh --shell $(which zsh) $(whoami) ## change user name, hadoop, ec2-user
+sudo chsh -s $(which zsh) -u $(whoami) ## change user name, hadoop, ec2-user
 cd $HOME
 git clone https://github.com/zsh-users/antigen.git
 mkdir .antigen

@@ -60,6 +60,7 @@ brew "gnu-which", args: ["with-default-names"]
 brew "libtasn1"
 brew "libunistring"
 brew "nettle"
+brew "mackup"
 brew "p11-kit"
 brew "gnutls"
 brew "gpatch"
@@ -132,4 +133,3 @@ mas "Fantastical 2", id: 975937182
 mas "LimeChat", id: 414030210
 mas "OmniGraffle", id: 1142578753
 mas "TextExpander", id: 405274824
-mas "Xcode", id: 497799835
