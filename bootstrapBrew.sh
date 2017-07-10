@@ -11,14 +11,13 @@ fi
 
 #Install Brewfile
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-brew bundle $HOME/bootstrapping/Brewfile
+brew bundle --file=$HOME/bootstrapping/Brewfile
 
 #Post Brew Isntall for User Environment
 gpip(){
        PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 gpip install powerline-status
-brew cask install font-source-code-pro-for-powerline
 cd $HOME
 git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"

@@ -126,6 +126,7 @@ cask "istat-menus"
 cask "iterm2"
 cask "hazel"
 cask "odrive"
+cask "font-source-code-pro-for-powerline"
 mas "Divvy", id: 413857545
 mas "Fantastical 2", id: 975937182
 mas "LimeChat", id: 414030210
