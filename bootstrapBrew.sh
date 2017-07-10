@@ -12,6 +12,7 @@ fi
 #Install Brewfile
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew bundle --file=$HOME/bootstrapping/Brewfile
+sudo echo $(which zsh) >> /etc/shells
 
 #Post Brew Isntall for User Environment
 gpip(){
