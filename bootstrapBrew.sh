@@ -14,6 +14,11 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew bundle --file=$HOME/bootstrapping/Brewfile
 sudo echo $(which zsh) >> /etc/shells
 
+#Set PATH to include homebrew binaries prior to full sourcing of .zshrc
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH=/usr/local/opt/python/libexec/bin:$PATH
+
 #Post Brew Isntall for User Environment
 gpip(){
        PIP_REQUIRE_VIRTUALENV="" pip "$@"
