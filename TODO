@@ -1,0 +1,30 @@
+Step 1: bootStrapBrew.sh 
+	- gets through shell installation
+	- is it really working?
+
+Step 2: login iCloud
+
+Step 3: login and sync odrive and WorkDocs
+
+Step 4: run mackup restore
+
+
+ERRORS
+Error detected while processing /Users/rhoium/.vimrc:
+line   53:
+E185: Cannot find color scheme 'solarized'
+line   54:
+E484: Can't open file /Users/rhoium/.vim/bundle/powerline/powerline/bindings/vim/plugin/powerline.vim
+
+/bin/false not available
+
+--> ROOT CAUSE
+  ---> change shell script not working:w
+
+
+zsh compinit: insecure directories, run compaudit for list.
+
+tmux not working - powerline not installed
+
+
+
