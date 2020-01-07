@@ -14,6 +14,8 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew bundle --file=$HOME/bootstrapping/Brewfile
 sudo echo $(which zsh) >> /etc/shells
 
+read "Homebrew and Brewfile Installed, Please Authenticate odrive so sync Can Begin - Press enter to continue"
+
 #Set PATH to include homebrew binaries prior to full sourcing of .zshrc
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
@@ -49,6 +51,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cd $HOME/.tmux/plugins/tpm/scripts/
 source ./install_plugins.sh
 cd $HOME
-
-#NOTE: must run post install script calling mackup after install completed:wq
+read "Environment Customizations Complete - Press enter ONLY when odrive has finished sync to continue"
+mackup restore
 
