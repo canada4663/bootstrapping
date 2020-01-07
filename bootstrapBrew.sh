@@ -12,8 +12,8 @@ fi
 #Install Brewfile
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew bundle --file=$HOME/bootstrapping/Brewfile
-sudo echo $(which zsh) >> /etc/shells
-
+#sudo echo $(which zsh) >> /etc/shells
+sudo chsh -s $(which zsh)
 read "Homebrew and Brewfile Installed, Please Authenticate odrive so sync Can Begin - Press enter to continue"
 
 #Set PATH to include homebrew binaries prior to full sourcing of .zshrc
