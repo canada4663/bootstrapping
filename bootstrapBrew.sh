@@ -46,6 +46,9 @@ git submodule update --init --recursive
 vim +PluginInstall +qall    ## solarized / powerline fix (local powerline install)
 cd $HOME
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-source $HOME/.tmux/plugins/tpm/scripts/install_plugins.sh
+cd $HOME/.tmux/plugins/tpm/scripts/
+source ./install_plugins.sh
+cd $HOME
 
-#Add mackup restore to post odrive install
+#NOTE: must run post install script calling mackup after install completed:wq
+
