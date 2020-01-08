@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #Presetup Tasks
 sudo softwareupdate -i -a
 xcode-select --install
@@ -14,7 +16,7 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 brew bundle --file=$HOME/bootstrapping/Brewfile
 #sudo echo $(which zsh) >> /etc/shells
 sudo chsh -s $(which zsh)
-read "Homebrew and Brewfile Installed, Please Authenticate odrive so sync Can Begin - Press enter to continue"
+read -p "Homebrew and Brewfile Installed, Please Authenticate odrive so sync Can Begin - Press enter to continue"
 
 #Set PATH to include homebrew binaries prior to full sourcing of .zshrc
 export PATH=/usr/local/bin:$PATH
@@ -28,6 +30,7 @@ gpip(){
 sudo xcodebuild -license accept
 gpip install powerline-status
 gpip install virtualenvwrapper
+gpip install tmuxp
 cd $HOME
 git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
@@ -51,6 +54,6 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cd $HOME/.tmux/plugins/tpm/scripts/
 source ./install_plugins.sh
 cd $HOME
-read "Environment Customizations Complete - Press enter ONLY when odrive has finished sync to continue"
+read -p "Environment Customizations Complete - Press enter ONLY when odrive has finished sync to continue"
 mackup restore
 
