@@ -11,9 +11,10 @@ fi
 
 #Install Brewfile
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-brew bundle --file=$HOME/bootstrapping/Brewfile
+curl -o $HOME/Brewfile https://raw.githubusercontent.com/canada4663/bootstrapping/master/Brewfile
+brew bundle --file=$HOME/Brewfile
+rm -f Brewfile
 #sudo echo $(which zsh) >> /etc/shells
-sudo chsh -s $(which zsh)
 read "Homebrew and Brewfile Installed, Please Authenticate odrive so sync Can Begin - Press enter to continue"
 
 #Set PATH to include homebrew binaries prior to full sourcing of .zshrc
@@ -28,6 +29,7 @@ gpip(){
 sudo xcodebuild -license accept
 gpip install powerline-status
 gpip install virtualenvwrapper
+gpip install tmuxp
 cd $HOME
 git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
@@ -48,8 +50,6 @@ git submodule update --init --recursive
 vim +PluginInstall +qall    ## solarized / powerline fix (local powerline install)
 cd $HOME
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-cd $HOME/.tmux/plugins/tpm/scripts/
-source ./install_plugins.sh
 cd $HOME
 read "Environment Customizations Complete - Press enter ONLY when odrive has finished sync to continue"
 mackup restore
