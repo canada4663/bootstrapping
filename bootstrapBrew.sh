@@ -28,6 +28,7 @@ gpip(){
 }
 sudo xcodebuild -license accept
 gpip install powerline-status
+gpip install psutil
 gpip install virtualenvwrapper
 gpip install tmuxp
 cd $HOME
