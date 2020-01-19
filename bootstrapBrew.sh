@@ -37,11 +37,12 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 homeshick --batch clone https://github.com/canada4663/dotfiles.git
 homeshick link --force
 chsh -s $(which zsh) 
-cd $HOME
-git clone https://github.com/zsh-users/antigen.git
-mkdir .antigen
-mv antigen/* .antigen/
-rm -Rf antigen
+#Not Needed for Brew installed antigen
+# cd $HOME
+# git clone https://github.com/zsh-users/antigen.git
+# mkdir .antigen
+# mv antigen/* .antigen/
+# rm -Rf antigen
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 cd $HOME/.vim/bundle
 git clone https://github.com/Valloric/YouCompleteMe.git
