@@ -1,6 +1,9 @@
 DISTRO=$(lsb_release -i | cut -f 2-)
 PIP=$(which pip)
 
+#Enable EC2 Hibernation
+sudo apt dist-upgrade -y
+sudo apt install ec2-hibinit-agent
 
 #Core User Environment
 cd $HOME
@@ -20,6 +23,9 @@ sudo apt-get install golang -y
 sudo update-alternatives --remove python /usr/bin/python2
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1
+
+
+
 ## Fonts: http://powerline.readthedocs.io/en/master/installation/linux.html ???
 sudo apt-get install tmux -y ## yum OK
 sudo pip install tmuxp ## yum OK
@@ -45,3 +51,5 @@ vim +PluginInstall +qall    ## solarized / powerline fix (local powerline instal
 cd $HOME
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cd $HOME
+
+sudo reboot
