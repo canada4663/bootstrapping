@@ -2,6 +2,7 @@
 DISTRO=$(lsb_release -i | cut -f 2-)
 PIP=$(which pip)
 
+
 #Core User Environment
 cd $HOME
 sudo apt-get install vim zsh git -y   ## yum ok
@@ -14,13 +15,13 @@ sudo apt-get install awscli -y ## yum = aws-cli.noarch
 sudo apt-get install powerline fonts-powerline -y ## sudo $PIP install powerline-status 
 ## Fonts: http://powerline.readthedocs.io/en/master/installation/linux.html ???
 sudo apt-get install tmux -y ## yum OK
-sudo pip install tmuxp ## yum OK
+sudo $PIP install tmuxp ## yum OK
 git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 ## backup existing dotfiles to preserve
 homeshick clone https://github.com/canada4663/dotfiles.git ## auto-respond yes?
 homeshick link --force
-sudo chsh --shell /bin/zsh ubuntu ## change user name, hadoop, ec2-user
+sudo chsh --shell $(which zsh) $USER
 cd $HOME
 git clone https://github.com/zsh-users/antigen.git
 mkdir .antigen
@@ -34,7 +35,8 @@ git submodule update --init --recursive
 ./install.py --all
 vim +PluginInstall +qall    ## solarized / powerline fix (local powerline install)
 cd $HOME
-
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+cd $HOME
 
 ## Issues on amazon linux
 ##	tmux using bash shell
