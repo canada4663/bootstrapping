@@ -4,7 +4,7 @@ PIP=$(which pip)
 #Enable EC2 Hibernation
 sudo apt-get upgdate -y
 sudo apt-get upgrade -y
-sudo apt dist-upgrade -y
+#sudo apt dist-upgrade -y
 sudo apt install ec2-hibinit-agent -y
 
 #Core User Environment
