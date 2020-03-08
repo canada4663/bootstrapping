@@ -3,16 +3,16 @@ PIP=$(which pip)
 
 #Enable EC2 Hibernation
 sudo apt dist-upgrade -y
-sudo apt install ec2-hibinit-agent
+sudo apt install ec2-hibinit-agent -y
 
 #Core User Environment
 cd $HOME
 sudo apt-get install vim zsh git -y   ## yum ok
 sudo apt-get install cmake -y ## yum ok
-sudo apt-get install python3
-sudo apt-get install python3-pip
-sudo apt-get install python3-virtualenv
-sudo apt-get install python3-dev
+sudo apt-get install python3 -y
+sudo apt-get install python3-pip -y
+sudo apt-get install python3-virtualenv -y
+sudo apt-get install python3-dev -y
 sudo apt-get install python-pip -y ## yum OK
 sudo apt-get install python-virtualenv -y ## yum = python27-virtualenv
 sudo apt-get install python-dev -y ## yum = python27-devel
