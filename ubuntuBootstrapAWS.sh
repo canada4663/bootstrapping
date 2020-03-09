@@ -22,6 +22,11 @@ sudo apt-get install virtualenvwrapper -y ## sudo $PIP install virtualenvwrapper
 sudo apt-get install awscli -y ## yum = aws-cli.noarch
 sudo apt-get install powerline fonts-powerline -y ## sudo $PIP install powerline-status
 sudo apt-get install golang -y
+sudo apt-get install docker docker-compose -y
+sudo groupadd docker
+sudo systemctl enable docker
+sudo usermod -aG docker $USER
+
 sudo update-alternatives --remove python /usr/bin/python2
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 1
