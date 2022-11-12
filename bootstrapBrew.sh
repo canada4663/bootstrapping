@@ -13,7 +13,7 @@ rm /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
 
 #Install Homebrew
 if ! command -v brew > /dev/null; then
-  ruby -e "$(curl --location --fail --silent --show-error https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   export PATH="/usr/local/bin:$PATH"
   printf "export PATH=\"/usr/local/bin:$PATH\"\n" >> $HOME/.bash_profile
 fi
@@ -35,7 +35,7 @@ export PATH=/usr/local/opt/python/libexec/bin:$PATH
 gpip(){
        PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
-sudo xcodebuild -license accept
+#sudo xcodebuild -license accept
 gpip install powerline-status
 gpip install psutil
 gpip install virtualenvwrapper
