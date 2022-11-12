@@ -6,8 +6,10 @@ sudo -v
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 #Presetup Tasks
-sudo softwareupdate -i -a
-xcode-select --install
+touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
+softwareupdate -i -a
+rm /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress
+
 
 #Install Homebrew
 if ! command -v brew > /dev/null; then
